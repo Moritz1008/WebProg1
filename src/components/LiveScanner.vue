@@ -1,6 +1,8 @@
 <template>
   <StreamBarcodeReader @decode="onDecode" @loaded="onLoaded()"></StreamBarcodeReader>
-  <h2>{{Text}}</h2>
+  <div>
+    <span style="color: red" id="Rec">Recognised</span> {{Text}}
+  </div>
 </template>
 
 <script>
@@ -18,6 +20,7 @@ export default {
     return{
       Text: "",
       Counter: 0,
+      recognised: false,
     }
   },
 
@@ -28,12 +31,16 @@ export default {
         this.Text="ist leider undefined mal wieder";
       }else {
         this.Text = text;
+        document.getElementById('Rec').style.color = "green";
       }
       this.Counter++;
     },
     onLoaded() {
       console.log("Ich mag Kekse und keine Mediendesigner!!!!!!!")
     },
+    ChangeColor() {
+
+    }
   }
 }
 </script>
