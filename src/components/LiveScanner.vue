@@ -1,7 +1,7 @@
 <template>
-  <p>hallo</p>
   <StreamBarcodeReader @decode="onDecode()" @loaded="onLoaded()"></StreamBarcodeReader>
   <h2>{{Text}}</h2>
+  <h3>So viel wurde schon gescannt: {{Counter}}</h3>
 </template>
 
 <script>
@@ -17,13 +17,16 @@ export default {
 
   data() {
     return{
-      Text: "noch nichts"
+      Text: 0,
+      Counter: 0,
     }
   },
 
   methods: {
     onDecode(text) {
-      this.Text = text
+      console.log(text);
+      this.Text = text;
+      this.Counter++;
     },
     onLoaded() {
       console.log("Ich mag Kekse und keine Mediendesigner!!!!!!!")
