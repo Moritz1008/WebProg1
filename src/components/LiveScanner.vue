@@ -25,7 +25,11 @@ export default {
   methods: {
     onDecode(text) {
       console.log(text);
-      this.Text = text;
+      if (text == undefined){
+        this.Text="ist leider undefined mal wieder";
+      }else {
+        this.Text = text;
+      }
       this.Counter++;
     },
     onLoaded() {
