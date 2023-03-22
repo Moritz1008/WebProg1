@@ -11,6 +11,7 @@
     "pinia": "^2.0.32",
     "vue": "^3.2.47",
     "vue-barcode-reader": "^1.0.3",
+    "vue-barcode-scanner": "^0.8.1",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {

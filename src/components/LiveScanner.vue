@@ -17,7 +17,7 @@ export default {
 
   data() {
     return{
-      Text: 0,
+      Text: "",
       Counter: 0,
     }
   },
@@ -34,7 +34,17 @@ export default {
     },
     onLoaded() {
       console.log("Ich mag Kekse und keine Mediendesigner!!!!!!!")
-    }
+    },
+    /*onDecode(a, b, c) {
+      console.log(a, b, c);
+      this.text = a;
+      if (this.id) clearTimeout(this.id);
+      this.id = setTimeout(() => {
+        if (this.text === a) {
+          this.text = "";
+        }
+      }, 5000);
+    },*/
   }
 }
 </script>
