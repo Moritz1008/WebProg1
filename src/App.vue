@@ -12,7 +12,6 @@ import LiveScanner from "./components/LiveScanner.vue";
     <div>
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/LiveScanner">Scanner</RouterLink>
       </nav>
     </div>
