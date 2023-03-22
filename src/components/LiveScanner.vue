@@ -1,7 +1,6 @@
 <template>
-  <StreamBarcodeReader @decode="onDecode()" @loaded="onLoaded()"></StreamBarcodeReader>
+  <StreamBarcodeReader @decode="onDecode" @loaded="onLoaded()"></StreamBarcodeReader>
   <h2>{{Text}}</h2>
-  <h3>So viel wurde schon gescannt: {{Counter}}</h3>
 </template>
 
 <script>
@@ -35,20 +34,14 @@ export default {
     onLoaded() {
       console.log("Ich mag Kekse und keine Mediendesigner!!!!!!!")
     },
-    /*onDecode(a, b, c) {
-      console.log(a, b, c);
-      this.text = a;
-      if (this.id) clearTimeout(this.id);
-      this.id = setTimeout(() => {
-        if (this.text === a) {
-          this.text = "";
-        }
-      }, 5000);
-    },*/
   }
 }
 </script>
 
 <style scoped>
+
+template{
+  margin: 10%;
+}
 
 </style>
