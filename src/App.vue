@@ -7,7 +7,7 @@ import LiveScanner from "./components/LiveScanner.vue";
 
   <header>
 
-    <h5>Suspicious Barcode-Scanner</h5>
+    <h5 style="text-align: center">Suspicious Barcode-Scanner</h5>
 
     <div>
       <nav>
@@ -61,6 +61,7 @@ nav a:first-of-type {
   header {
     place-items: center;
     align-content: center;
+    text-align: center;
     padding-right: calc(var(--section-gap) / 2);
   }
 
