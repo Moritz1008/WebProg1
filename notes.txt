@@ -1,1 +1,3 @@
 ---Notes---
+
+Beispiel: https://codesandbox.io/s/vue-barcode-reader-demo-guj3f?file=/src/components/HelloWorld.vue:500-735
