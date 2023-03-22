@@ -7,7 +7,7 @@ import LiveScanner from "./components/LiveScanner.vue";
 
   <header>
 
-    <h5>Super krasse Barcode-Scanner Web-App 3000</h5>
+    <h5>Suspicious Barcode-Scanner</h5>
 
     <div>
       <nav>
@@ -75,6 +75,12 @@ nav a:first-of-type {
 
     padding: 1rem 0;
     margin-top: 1rem;
+  }
+
+  header h5 {
+    font-family: monospace;
+    text-align: center;
+    color: darkgreen;
   }
 }
 </style>
