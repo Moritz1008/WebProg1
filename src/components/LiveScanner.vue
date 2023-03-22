@@ -36,7 +36,7 @@ export default {
       this.Counter++;
     },
     onLoaded() {
-      console.log("Ich mag Kekse und keine Mediendesigner!!!!!!!")
+      console.log("geladen")
     },
     ChangeColor() {
 
