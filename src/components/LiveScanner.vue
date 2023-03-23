@@ -1,46 +1,42 @@
 <template>
   <StreamBarcodeReader @decode="onDecode" @loaded="onLoaded()"></StreamBarcodeReader>
-  <div>
-    <span style="color: red" id="Rec">Recognised</span> {{Text}}
-  </div>
+  <LiveData />
 </template>
 
 <script>
 
 import { StreamBarcodeReader } from "vue-barcode-reader";
+import LiveData from "./LiveData.vue";
+import {useEANstore} from "../stores/EANs";
 
 export default {
   name: "LiveScanner",
 
   components: {
-    StreamBarcodeReader
+    LiveData,
+    StreamBarcodeReader,
   },
-
   data() {
     return{
-      Text: "",
-      Counter: 0,
-      recognised: false,
+
     }
   },
+  setup() {
+    const path = useEANstore()
 
+    return { path }
+  },
   methods: {
     onDecode(text) {
       console.log(text);
       if (text == undefined){
-        this.Text="ist leider undefined mal wieder";
-      }else {
-        this.Text = text;
-        document.getElementById('Rec').style.color = "green";
+        console.log("ist Scheiße")
       }
-      this.Counter++;
+      useEANstore().setCurrEAN(text)
     },
     onLoaded() {
       console.log("geladen")
     },
-    ChangeColor() {
-
-    }
   }
 }
 </script>
