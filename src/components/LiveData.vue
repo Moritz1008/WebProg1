@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span style="color: red" id="Rec">Recognised</span>
+    <span style="color: black" id="Rec">Recognised</span>
   </div>
   <div>
     <p>{{ EAN }}</p>
@@ -23,12 +23,14 @@ export default {
 
     let StoreElement = path.compareEAN()
     let StoreEAN = path.getStoreEAN
+    let StoreShow = path.getStoreShow
 
-    return { path, StoreElement, StoreEAN }
+    return { path, StoreElement, StoreEAN, StoreShow }
   },
   mounted: {
     changeColor() {
       if (this.StoreElement!=0){
+        console.log("is net so gagge")
         document.getElementById('Rec').style.color = "green";
       } else {
         console.log("is gagge")

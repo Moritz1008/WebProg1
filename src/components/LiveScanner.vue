@@ -1,6 +1,6 @@
 <template>
   <StreamBarcodeReader @decode="onDecode" @loaded="onLoaded()"></StreamBarcodeReader>
-  <LiveData />
+  <LiveData v-if="this.StoreShow == 1"/>
 </template>
 
 <script>
@@ -24,7 +24,9 @@ export default {
   setup() {
     const path = useEANstore()
 
-    return { path }
+    let StoreShow = path.getStoreShow
+
+    return { path, StoreShow }
   },
   methods: {
     onDecode(text) {
@@ -33,6 +35,7 @@ export default {
         console.log("ist Scheiße")
       }
       useEANstore().setCurrEAN(text)
+      useEANstore().setShow(1)
     },
     onLoaded() {
       console.log("geladen")
