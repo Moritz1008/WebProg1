@@ -84,9 +84,11 @@ header h5 {
   }
 
   header h5 {
-    font-family: monospace;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 4vw;
     text-align: center;
-    color: darkgreen;
+    color: aquamarine;
   }
 }
 </style>
