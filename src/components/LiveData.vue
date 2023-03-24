@@ -27,6 +27,7 @@ export default {
 
     return { path, StoreElement, StoreEAN, StoreShow }
   },
+  // Ändert Farbe, wenn die EAN bekannt ist 
   mounted: {
     changeColor() {
       if (this.StoreElement!=0){

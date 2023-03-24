@@ -56,6 +56,12 @@ nav a:first-of-type {
   border: 0;
 }
 
+header h5 {
+    font-family: monospace;
+    text-align: center;
+    color: darkgreen;
+}
+
 @media (min-width: 1024px) {
   header {
     place-items: center;
