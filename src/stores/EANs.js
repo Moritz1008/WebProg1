@@ -14,21 +14,17 @@ export const useEANstore = defineStore('EAN', {
     actions: {
         //normale Funktionen, die auf den Store zugreifen können
         compareEAN(state) {
-            console.log("wird compared")
             var ArrLen = this.Gegenstände.length
             for (var i = 0; i < ArrLen; i++){
                 if (this.currEAN == this.Gegenstände[i].EAN){
-                    console.log("Rückgabewert: " + this.Gegenstände[i].EAN)
                     return this.Gegenstände[i]
                 }
             }
-            console.log("Rückgabewert 0")
             return 0
         },
         setCurrEAN(newEAN) {
             this.currEAN = newEAN
             console.log("Neue EAN in Store: " + this.currEAN)
-            console.log("Wird in setter compared")
             this.compareEAN()
         },
         setShow(newShow) {
