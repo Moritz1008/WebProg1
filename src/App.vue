@@ -11,13 +11,14 @@ import LiveScanner from "./components/LiveScanner.vue";
 
     <div>
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/LiveScanner">Scanner</RouterLink>
+        <!-- <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/LiveScanner">Scanner</RouterLink> -->
+        <LiveScanner />
       </nav>
     </div>
   </header>
 
-  <RouterView />
+  <!-- <RouterView /> -->
 </template>
 
 <style scoped>
@@ -57,9 +58,10 @@ nav a:first-of-type {
 }
 
 header h5 {
-    font-family: monospace;
+  font-family: Arial, Helvetica, sans-serif;
+    font-size: 6vw;
     text-align: center;
-    color: darkgreen;
+    color: aquamarine;
 }
 
 @media (min-width: 1024px) {
