@@ -4,29 +4,28 @@
     <span style="color: black" id="Rec">Recognised</span>
   </div>
   <div>
-    <p>{{ StoreElement.EAN }}</p>
+    <img :src="Test1.Bild" style="max-width: 60%; height: auto">
+    <p>{{ Test1.EAN }}</p>
   </div>
   <div>
-    <p>{{ StoreElement.Name }}</p>
+    <p>{{ Test1.Name }}</p>
   </div>
 </template>
 
 <script>
 
 import { StreamBarcodeReader } from "vue-barcode-reader";
-import LiveData from "./LiveData.vue";
 import {useEANstore} from "../stores/EANs";
 
 export default {
   name: "LiveScanner",
 
   components: {
-    LiveData,
     StreamBarcodeReader,
   },
   data() {
     return{
-
+      Test1: {}
     }
   },
   setup() {
@@ -42,13 +41,14 @@ export default {
     onDecode(text) {
       console.log(text);
       if (text == undefined){
-        console.log("ist Scheiße")
+        console.log("Scan is undefined!")
       }
       useEANstore().setCurrEAN(text)
       useEANstore().setShow(1)
       this.StoreElement = useEANstore().compareEAN()
       this.StoreElement = JSON.parse(JSON.stringify(this.StoreElement));
       console.log(this.StoreElement)
+      this.Test1 = this.StoreElement
       this.changeColor()
     },
     onLoaded() {

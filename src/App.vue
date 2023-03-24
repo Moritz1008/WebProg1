@@ -1,5 +1,4 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
 import LiveScanner from "./components/LiveScanner.vue";
 </script>
 
@@ -11,14 +10,11 @@ import LiveScanner from "./components/LiveScanner.vue";
 
     <div>
       <nav>
-        <!-- <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/LiveScanner">Scanner</RouterLink> -->
         <LiveScanner />
       </nav>
     </div>
   </header>
 
-  <!-- <RouterView /> -->
 </template>
 
 <style scoped>
