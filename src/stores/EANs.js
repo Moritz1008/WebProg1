@@ -3,7 +3,7 @@ import {defineStore} from "pinia";
 export const useEANstore = defineStore('EAN', {
     state: () => ({
         Gegenstände: [
-            {Bild: "", EAN: "0", Name: "Wasserflasche"},
+            {Bild: "", EAN: "4337185051937", Name: "Wasserflasche"},
             {Bild: "", EAN: "4059549000152", Name: "Kreide"},
             {Bild: "", EAN: "88250273034007", Name: "Paket"}
         ],

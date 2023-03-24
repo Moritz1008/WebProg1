@@ -1,6 +1,14 @@
 <template>
   <StreamBarcodeReader @decode="onDecode" @loaded="onLoaded()"></StreamBarcodeReader>
-  <LiveData v-if="this.StoreShow == 1"/>
+  <div>
+    <span style="color: black" id="Rec">Recognised</span>
+  </div>
+  <div>
+    <p>{{ StoreElement.EAN }}</p>
+  </div>
+  <div>
+    <p>{{ StoreElement.Name }}</p>
+  </div>
 </template>
 
 <script>
@@ -24,9 +32,11 @@ export default {
   setup() {
     const path = useEANstore()
 
-    let StoreShow = path.getStoreShow
+    let StoreShow = useEANstore().getStoreShow
+    let StoreEAN = useEANstore().getStoreEAN
+    let StoreElement = useEANstore().compareEAN()
 
-    return { path, StoreShow }
+    return { path, StoreShow, StoreEAN, StoreElement }
   },
   methods: {
     onDecode(text) {
@@ -36,10 +46,21 @@ export default {
       }
       useEANstore().setCurrEAN(text)
       useEANstore().setShow(1)
+      this.StoreElement = useEANstore().compareEAN()
+      this.StoreElement = JSON.parse(JSON.stringify(this.StoreElement));
+      console.log(this.StoreElement)
+      this.changeColor()
     },
     onLoaded() {
       console.log("geladen")
     },
+    changeColor() {
+      if (this.StoreElement!=0){
+        document.getElementById('Rec').style.color = "green";
+      } else {
+        document.getElementById('Rec').style.color = "red";
+      }
+    }
   }
 }
 </script>

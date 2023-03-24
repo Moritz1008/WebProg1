@@ -3,7 +3,10 @@
     <span style="color: black" id="Rec">Recognised</span>
   </div>
   <div>
-    <p>{{ EAN }}</p>
+    <p>{{ StoreEAN }}</p>
+  </div>
+  <div>
+    <p>{{ StoreElement.Name }}</p>
   </div>
 </template>
 
@@ -22,8 +25,8 @@ export default {
     const path = useEANstore()
 
     let StoreElement = path.compareEAN()
-    let StoreEAN = path.getStoreEAN
-    let StoreShow = path.getStoreShow
+    let StoreEAN = useEANstore().getStoreEAN
+    let StoreShow = useEANstore().getStoreShow
 
     return { path, StoreElement, StoreEAN, StoreShow }
   },
