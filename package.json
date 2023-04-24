@@ -1,23 +1,17 @@
 {
-  "name": "webprog1",
-  "version": "0.0.0",
+  "name": "reaction-timer",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
   },
   "dependencies": {
-    "pinia": "^2.0.32",
-    "quagga": "^0.12.1",
-    "vue": "^3.2.47",
-    "vue-barcode-reader": "^1.0.3",
-    "vue-barcode-scanner": "^0.8.1",
-    "vue-burger-menu": "^2.0.5",
-    "vue-router": "^4.1.6"
+    "core-js": "^3.8.3",
+    "vue": "^3.2.13"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.0.0",
-    "vite": "^4.2.1"
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-service": "~5.0.0"
   }
 }

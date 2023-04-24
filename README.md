@@ -1,30 +1,19 @@
-# WebProg1
+# reaction-timer
 
-Dieses Projekt wurde mit Blut, Schweiß und Tränen erstellt.
-Wir hoffen, dass sie die richtigen Barcodes besitzen.
-Wir wünschen ihnen viel Spaß auf dieser aufregenden Reise!
-
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-## Project Setup
-
-```sh
+## Project setup
+```
 npm install
 ```
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
+### Compiles and hot-reloads for development
+```
+npm run serve
 ```
 
-### Compile and Minify for Production
-
-```sh
+### Compiles and minifies for production
+```
 npm run build
 ```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
