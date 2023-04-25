@@ -1,8 +1,8 @@
 <template>
-  <div id="status" v-if="!status" :style="{'background-color': color}">
+  <div id="statusRed" v-if="!status" :style="{'background-color': color}">
     <p>{{ statusMsg }}</p>
   </div>
-  <div id="scanSuccess" v-if="status" :style="{'background-color': color}">
+  <div id="statusGreen" v-if="status" :style="{'background-color': color}">
     <p>{{ statusMsg }}</p>
   </div>
 
@@ -14,13 +14,17 @@
     props: ['status'],
     data() {
       return{
-        statusMsg: 'recognised',
+        //statusMsg: 'not recognised',
       }
     },
     computed: {
       color() {
         return this.status ? 
           'seagreen' : 'crimson'
+      },
+      statusMsg() {
+        return this.status ?
+          'recognised' : 'not recognised'
       }
     }
   }
@@ -28,19 +32,25 @@
 </script>
 
 <style>
-  #status {
+  #statusRed {
     margin-top: 10%;
     border-radius: 10px;
     width: 300px;
     height: 100px;
   }
-  #scanSuccess {
+  #statusGreen {
     margin-top: 10%;
     border-radius: 10px;
-    width: 40%;
-    height: 20%;
+    width: 300px;
+    height: 100px;
   }
-  #status p {
+  #statusRed p {
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1em;
+  }
+  #statusGreen p {
     font-size: x-large;
     font-weight: bold;
     text-align: center;

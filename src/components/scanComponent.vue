@@ -1,5 +1,5 @@
 <template>
-  <div :style="{'background-color': color}">
+  <div id="scanContainer" :style="{'background-color': color}">
     <StreamBarcodeReader @decode="onDecode" @loaded="onLoaded" style="margin: 10px"></StreamBarcodeReader>
   </div>  
 </template>
@@ -31,5 +31,7 @@ export default {
 </script>
 
 <style>
-
+  #scanContainer {
+    border-radius: 5px;
+  }
 </style>
