@@ -37,23 +37,27 @@
     border-radius: 10px;
     width: 300px;
     height: 100px;
+    display: table;
   }
   #statusGreen {
     margin-top: 10%;
     border-radius: 10px;
     width: 300px;
     height: 100px;
+    display:table;
   }
   #statusRed p {
     font-size: x-large;
     font-weight: bold;
     text-align: center;
-    margin-top: 1em;
+    vertical-align: middle;
+    display: table-cell;
   }
   #statusGreen p {
     font-size: x-large;
     font-weight: bold;
     text-align: center;
-    margin-top: 1em;
+    vertical-align: middle;
+    display: table-cell;
   }
 </style>

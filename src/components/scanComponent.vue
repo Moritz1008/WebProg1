@@ -33,5 +33,6 @@ export default {
 <style>
   #scanContainer {
     border-radius: 5px;
+    max-width: 80%;
   }
 </style>
