@@ -1,7 +1,9 @@
 <template>
   <h1>Barcode-Scanner</h1><br>
-  <statusComponent></statusComponent>
-  <StreamBarcodeReader @decode="onDecode" @loaded="onLoaded"></StreamBarcodeReader>
+  <statusComponent :status="isRecognised"></statusComponent>
+  <div :style="{'background-color': color}">
+    <StreamBarcodeReader @decode="onDecode" @loaded="onLoaded" style="margin: 10px"></StreamBarcodeReader>
+  </div>  
   <RouterView />
 </template>
 
@@ -15,14 +17,15 @@
     components: { StreamBarcodeReader, statusComponent },
     data() {
       return {
-        //data here
-        isRecognised: true
+        isRecognised: false,
+        color: 'crimson'
       }
     },
     methods: {
-      //methods here
       onDecode(num) {
         console.log('num:' + num)
+        this.isRecognised = true
+        this.color = 'seagreen'
       },
       onLoaded() {
         console.log('loaded')

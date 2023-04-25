@@ -11,11 +11,16 @@
 <script>
   export default {
     name: 'statusComponent',
+    props: ['status'],
     data() {
       return{
-        status: false,
         statusMsg: 'recognised',
-        color: 'crimson'
+      }
+    },
+    computed: {
+      color() {
+        return this.status ? 
+          'seagreen' : 'crimson'
       }
     }
   }
