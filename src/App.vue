@@ -1,20 +1,18 @@
 <template>
   <h1>Barcode-Scanner</h1><br>
   <statusComponent :status="isRecognised"></statusComponent>
-  <div :style="{'background-color': color}">
-    <StreamBarcodeReader @decode="onDecode" @loaded="onLoaded" style="margin: 10px"></StreamBarcodeReader>
-  </div>  
+  <scanComponent @scan="onScan"></scanComponent>
   <RouterView />
 </template>
 
 <script>
   import { RouterLink, RouterView } from 'vue-router'
-  import { StreamBarcodeReader } from "vue-barcode-reader";
   import statusComponent from './components/statusComponent.vue'
+  import scanComponent from './components/scanComponent.vue'
 
   export default {
     name: 'App',
-    components: { StreamBarcodeReader, statusComponent },
+    components: { scanComponent, statusComponent },
     data() {
       return {
         isRecognised: false,
@@ -22,14 +20,11 @@
       }
     },
     methods: {
-      onDecode(num) {
+      onScan(num) {
         console.log('num:' + num)
         this.isRecognised = true
         this.color = 'seagreen'
       },
-      onLoaded() {
-        console.log('loaded')
-      }
     }
   }
 </script>
